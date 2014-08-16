@@ -11,7 +11,6 @@ export default ApplicationSerializer.extend({
   extractSingle: function(store, type, payload) {
     payload.id = payload.full_name;
     payload.links = { "commits" : 'commits' };
-    window.console.log(payload);
     return this._super(store, type, payload);
   }
 });

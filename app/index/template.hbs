@@ -1,6 +1,8 @@
-<h3>Select a repository to track</h3>
+<div class="jumbotron">
+  <h3>Select a repository to track</h3>
   <ul>
     {{#each}}
       {{#link-to 'repo' this tagName="li" }}<a>{{name}}</a>{{/link-to}}
     {{/each}}
   </ul>
+</div>

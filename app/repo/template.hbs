@@ -1,14 +1,12 @@
-<div>
-<div>ID - {{id}}</div>
-<div>Name - {{name}}</div>
-<div>Full Name - {{fullName}}</div>
-<div> Description - {{description}}</div>
-<div> Network Count - {{networkCount}}</div>
-<div> Subscriber Count - {{subscribersCount}}</div>
-  <ul>
-  {{#each commits}}
-    <li>{{sha}}</li>
-  {{/each}}
-  </ul>
-{{outlet}}
+<div class="col-xs-12 col-sm-9">
+  <div class="jumbotron">
+    {{outlet}}
+  </div>
+</div>
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+  <div class="list-group">
+    {{#link-to 'repo.index' class="list-group-item"}}Home{{/link-to}}
+    {{#link-to 'repo.commits' class="list-group-item"}}Commits{{/link-to}}
+    <a href="#" class="list-group-item">PRs</a>
+  </div>
 </div>
