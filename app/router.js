@@ -7,6 +7,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.resource('repo', { path: '/:owner.login/:name' },function() {
     this.route('commits');
+    this.route('commits/details',{path:'/commits/:id'});
   });
 });
 

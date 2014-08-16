@@ -6,11 +6,8 @@ export default ApplicationAdapter.extend({
         host = this.get('host'),
         prefix = this.urlPrefix();
 
-    url.push('repos');
-
-    if (id) { url.push(id); }
     if (type) { url.push(this.pathForType(type)); }
-    
+    if (id) { url.push(id); }
 
     if (prefix) { url.unshift(prefix); }
 
