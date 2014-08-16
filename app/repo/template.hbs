@@ -5,4 +5,10 @@
 <div> Description - {{description}}</div>
 <div> Network Count - {{networkCount}}</div>
 <div> Subscriber Count - {{subscribersCount}}</div>
+  <ul>
+  {{#each commits}}
+    <li>{{sha}}</li>
+  {{/each}}
+  </ul>
+{{outlet}}
 </div>

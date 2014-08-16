@@ -7,4 +7,6 @@ export default DS.Model.extend({
 	networkCount: DS.attr('number'),
 	subscribersCount: DS.attr('number'),
 	owner: DS.attr(),
+	gitCommitsUrl: DS.attr('string'),
+	commits: DS.hasMany('commit',{async:true})
 });
