@@ -1,6 +1,9 @@
 import ApplicationSerializer from '../application/serializer';
 
 export default ApplicationSerializer.extend({
+  attrs: {
+    author: {embedded: 'always'},
+  },
   /* generate id for a commit as 'user/repo/sha' */
   _makeId: function(url) {
     var urlSlices = url.split('/');

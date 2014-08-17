@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 var inflector = new Ember.Inflector(Ember.Inflector.defaultRules);
 
-export default DS.ActiveModelSerializer.extend({
+export default DS.ActiveModelSerializer.extend(DS.EmbeddedRecordsMixin,{
   extractArray: function(store, type, payload) {
     var res = {};
     res[inflector.pluralize(type.typeKey)] = payload;
