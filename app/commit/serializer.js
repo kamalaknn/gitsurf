@@ -1,9 +1,14 @@
 import ApplicationSerializer from '../application/serializer';
 
 export default ApplicationSerializer.extend({
-  attrs: {
-    author: {embedded: 'always'},
-  },
+  
+  /*cannot use author as embeded because I reset id as login 
+  to ease store.findById as the right response is from api.github.com/users/:login 
+  somewhere in using EmbeddedRecordsMixin the pointer to belongsTo of author stil remains the gitHub numeric id*/
+//  attrs: {
+//    author: {deserialize: 'records'}
+//  },
+
   /* generate id for a commit as 'user/repo/sha' */
   _makeId: function(url) {
     var urlSlices = url.split('/');
@@ -15,6 +20,17 @@ export default ApplicationSerializer.extend({
     idFragments.push(urlSlices[sliceLength-1]);
     
     return idFragments.join('/');
+  },
+  
+  normalize: function(type, hash, prop) {  
+    hash.author.id = hash.author.login;
+    
+    /*after insane digging, traced it to 
+      https://github.com/emberjs/data/blob/v1.0.0-beta.9/packages/activemodel-adapter/lib/system/active_model_serializer.js#L278
+      where payloadKey was author_id TODO find out the exact reason why author_id of the hash was looked up */
+    
+    hash.author_id = hash.author.login;
+    return this._super(type, hash, prop);
   },
   extractArray: function(store, type, payload) {
     var self = this;

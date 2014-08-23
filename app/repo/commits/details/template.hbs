@@ -1,8 +1,12 @@
-<h4>Details page of commit id - {{id}} </h4>
+<h4>Details page of commit id - {{sha}} </h4>
 
 <div>
-  {{log author}}
   <h4>Author details </h4>
-  <p>{{author.name}}</p>
+  <p>{{author.id}}</p>
+  <p>{{#link-to 'user' author}}{{author.login}}{{/link-to}}</p>
+  <p>{{author.email}}</p>
+  <p>{{author.followers}}</p>
+  <p>{{author.avatar_url}}</p>
   <img width="150px" height="150px" style="border-radius:10px" {{bind-attr src="author.avatarUrl"}}/>
+  <p>{{author.name}}</p>
 </div>

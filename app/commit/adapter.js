@@ -2,10 +2,10 @@ import ApplicationAdapter from '../application/adapter';
 
 export default ApplicationAdapter.extend({
   buildURL: function(type, id) {
-    var url = [];
     var host = this.get('host');
     var prefix = this.urlPrefix();
-
+    var url = [];
+    
     url.push('repos');
     if (id) { 
       var idFragments = id.split('/');

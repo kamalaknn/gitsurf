@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function(params) {
+  model: function() {
     var urlSlices = this.router.get('url').split('/');
     var id = [];
     id.push(urlSlices[1]);

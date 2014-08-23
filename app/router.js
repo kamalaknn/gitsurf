@@ -9,6 +9,7 @@ Router.map(function() {
     this.route('commits');
     this.route('commits/details',{path:'/commits/:sha'});
   });
+  this.resource('user', {path: 'users/:login'});
 });
 
 export default Router;
