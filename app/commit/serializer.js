@@ -23,13 +23,16 @@ export default ApplicationSerializer.extend({
   },
   
   normalize: function(type, hash, prop) {  
-    hash.author.id = hash.author.login;
+    if(hash.author){
+      hash.author.id = hash.author.login;
+  
+      /*after insane digging, traced it to 
+        https://github.com/emberjs/data/blob/v1.0.0-beta.9/packages/activemodel-adapter/lib/system/active_model_serializer.js#L278
+        where payloadKey was author_id TODO find out the exact reason why author_id of the hash was looked up */
+
+      hash.author_id = hash.author.login;
+    }
     
-    /*after insane digging, traced it to 
-      https://github.com/emberjs/data/blob/v1.0.0-beta.9/packages/activemodel-adapter/lib/system/active_model_serializer.js#L278
-      where payloadKey was author_id TODO find out the exact reason why author_id of the hash was looked up */
-    
-    hash.author_id = hash.author.login;
     return this._super(type, hash, prop);
   },
   extractArray: function(store, type, payload) {
