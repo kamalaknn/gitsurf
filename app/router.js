@@ -5,11 +5,11 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('repo', { path: '/:owner.login/:name' },function() {
+  this.route('repo', { path: '/:owner.login/:name' },function() {
     this.route('commits');
     this.route('commits/details',{path:'/commits/:sha'});
   });
-  this.resource('user', {path: 'users/:login'});
+  this.route('user', {path: 'users/:login'});
 });
 
 export default Router;
