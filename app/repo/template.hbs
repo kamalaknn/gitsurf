@@ -7,6 +7,8 @@
   <div class="list-group">
     {{#link-to 'repo.index' class="list-group-item"}}Home{{/link-to}}
     {{#link-to 'repo.commits' class="list-group-item"}}Commits{{/link-to}}
-    <a href="#" class="list-group-item">PRs</a>
+    {{#link-to 'repo.pulls' class="list-group-item"}}Pull Requests{{/link-to}}
+    {{#link-to 'repo.issues' class="list-group-item"}}Issues{{/link-to}}
+    {{#link-to 'repo.contributors' class="list-group-item"}}Contributors{{/link-to}}
   </div>
 </div>
