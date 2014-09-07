@@ -7,6 +7,6 @@
   <p>{{author.email}}</p>
   <p>{{author.followers}}</p>
   <p>{{author.avatar_url}}</p>
-  <img width="150px" height="150px" style="border-radius:10px" {{bind-attr src="author.avatarUrl"}}/>
+  {{avatar-img width="150px" height="150px" src=author.avatarUrl }}
   <p>{{author.name}}</p>
 </div>

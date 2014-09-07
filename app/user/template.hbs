@@ -1,7 +1,8 @@
 <div class="jumbotron">
   <div> {{login}} ( {{name}} )</div>
-  <div >
-    <img width="150px" height="150px" style="border-radius:10px" {{bind-attr src="avatarUrl"}}/>
+  <div>
+    {{avatar-img src=avatarUrl width="150px" height="150px"}}
+
   </div>
   <div> followers - {{followers}}</div>
   <a {{bind-attr href="htmlUrl" }} >Go to gitHub page </a>
