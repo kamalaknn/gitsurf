@@ -1,5 +1,5 @@
 <ul>
   {{#each contributors}}
-    <li>{{id}}</li>
+    <li>{{#link-to 'user' this}}{{id}}{{/link-to}}</li>
   {{/each}}
 </ul>
