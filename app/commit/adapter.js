@@ -7,12 +7,17 @@ export default ApplicationAdapter.extend({
     var url = [];
     
     url.push('repos');
+    
     if (id) { 
       var idFragments = id.split('/');
       url.push(idFragments[0]); 
       url.push(idFragments[1]); 
       url.push('commits');
       url.push(idFragments[2]); 
+    }
+    else {
+      url.push(this.currentRepo.get('id'));
+      url.push('commits');
     }
 
     if (prefix) { url.unshift(prefix); }

@@ -1,7 +1,8 @@
 <ul>
-  {{#each commits}}
+  {{#each}}
     <li>{{#link-to 'repo.commits/details' this}}{{sha}}{{/link-to}}</li>
   {{else}}
     <li>Loading commits...</li>
   {{/each}}
+  <li><a {{action 'loadMore'}}>Load more</a></li>
 </ul>
