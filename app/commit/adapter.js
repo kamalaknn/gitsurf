@@ -8,7 +8,7 @@ export default ApplicationAdapter.extend({
     
     url.push('repos');
     
-    if (id) { 
+    if (id) {
       var idFragments = id.split('/');
       url.push(idFragments[0]); 
       url.push(idFragments[1]); 

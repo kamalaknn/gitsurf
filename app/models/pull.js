@@ -5,4 +5,5 @@ export default DS.Model.extend({
   state: DS.attr('string'),
   title: DS.attr('string'),
   body: DS.attr('string'),
+  repo: DS.belongsTo('repo')
 });

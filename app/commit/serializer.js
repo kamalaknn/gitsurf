@@ -43,11 +43,13 @@ export default ApplicationSerializer.extend({
     var self = this;
     payload.forEach(function(record) {
       record.id = self._makeId(record.url);
+      record.repo = self.currentRepo.get('id');
     });
     return this._super(store, type, payload);
   },
   extractSingle: function(store, type, payload) {
     payload.id = this._makeId(payload.url);
+    payload.repo = this.currentRepo.get('id');
     return this._super(store, type, payload);
   }
 });
