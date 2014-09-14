@@ -16,7 +16,11 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               {{#each}}
-              {{#link-to 'repo' this tagName="li" }}<a>{{name}}</a>{{/link-to}}
+              {{#link-to 'repo' this tagName="li" }}
+                {{#link-to 'repo' this}}
+                  {{name}}
+                {{/link-to}}
+              {{/link-to}}
               {{/each}}
             </ul>
            

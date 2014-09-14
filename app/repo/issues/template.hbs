@@ -1,6 +1,5 @@
 <ul>
   {{#each}}
-    <li><a>{{number}}</a></li>
-    <li>{{body}}</li>
+    <li>{{#link-to 'repo.issues.details' this}}[#{{number}}] {{title}}{{/link-to}}</li>
   {{/each}}
 </ul>
