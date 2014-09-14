@@ -1,5 +1,13 @@
-<ul>
+<div>
   {{#each}}
-    <li>{{#link-to 'repo.issues.details' this}}[#{{number}}] {{title}} {{/link-to}}</li>
+    <div style="border: 1px solid #ededed;border-radius: 10px;margin: 10px">
+      <div class="pull-left" style="padding:20px">
+        {{avatar-img width="50px" height="50px" src=user.avatarUrl }}
+      </div>
+      <div style="padding:20px">{{#link-to 'repo.pulls.details' this}}[#{{number}}] {{format-markdown title}} {{/link-to}}</div>
+    </div>
   {{/each}}
-</ul>
+  <div style="border: 1px solid #ededed;border-radius: 10px;margin: 10px">
+    <div style="padding:20px"><a {{action 'loadMore'}}>Load more</a></div>
+  </div>
+</div>

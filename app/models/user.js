@@ -7,5 +7,7 @@ export default DS.Model.extend({
   followers: DS.attr('number'),
   name: DS.attr('string'),
   avatarUrl: DS.attr('string'),
+  
+  //relationships
   repos: DS.hasMany('repo',{async: true, inverse: null})
 });

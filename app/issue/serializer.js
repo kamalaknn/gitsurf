@@ -14,6 +14,21 @@ export default ApplicationSerializer.extend({
     return idFragments.join('/');
   },
   
+  normalize: function(type, hash, prop) {  
+    if(hash.user){
+      hash.user.id = hash.user.login;
+  
+      /**
+        after insane digging, traced it to 
+        https://github.com/emberjs/data/blob/v1.0.0-beta.9/packages/activemodel-adapter/lib/system/active_model_serializer.js#L278
+        where payloadKey was author_id TODO find out the exact reason why author_id of the hash was looked up 
+      */
+
+      hash.user_id = hash.user.login;
+    }
+    
+    return this._super(type, hash, prop);
+  },
   extractArray: function(store, type, payload) {
     var self = this;
     var repoID = this.currentRepo.get('id');

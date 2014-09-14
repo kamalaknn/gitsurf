@@ -1,11 +1,11 @@
 <h4>Details page of commit id - {{sha}} </h4>
 
 <div>
+  <p>{{format-markdown commit.message}}</p>
   <h4>Author details </h4>
   <p>{{author.id}}</p>
   <p>{{#link-to 'user' author}}{{author.login}}{{/link-to}}</p>
   <p>{{author.email}}</p>
-  <p>{{author.followers}}</p>
   <p>{{author.avatar_url}}</p>
   {{avatar-img width="150px" height="150px" src=author.avatarUrl }}
   <p>{{author.name}}</p>
