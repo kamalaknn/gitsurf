@@ -29,7 +29,7 @@
     "express": "^4.8.5",
     "glob": "^4.0.5",
     "broccoli-less-single": "~0.1.4",
-    "ember-cli-kamalaknn-components": "git+https://github.com/kamalaknn/ember-cli-kamalaknn-components#v0.0.1",
+    "ember-cli-kamalaknn-components": "git+https://github.com/kamalaknn/ember-cli-kamalaknn-components",
     "liquid-fire": "~0.8.1"
   }
 }
