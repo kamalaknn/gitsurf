@@ -4,8 +4,8 @@ export default DS.Model.extend({
   number: DS.attr('number'),
   body: DS.attr('string'),
   title: DS.attr('string'),
-  user: DS.belongsTo('user'),
   
   //relationships
+  user: DS.belongsTo('user', { async: true }),
   repo: DS.belongsTo('repo')
 });

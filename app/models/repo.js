@@ -10,8 +10,8 @@ export default DS.Model.extend({
   gitCommitsUrl: DS.attr('string'),
   
   //relationships
-  commits: DS.hasMany('commit',{async:true}),
-  pulls: DS.hasMany('pull',{async:true}),
-  contributors: DS.hasMany('user',{async:true}),
-  issues: DS.hasMany('issue',{async:true})
+  commits: DS.hasMany('commit', { async:true }),
+  pulls: DS.hasMany('pull', { async:true }),
+  contributors: DS.hasMany('user', { async:true }),
+  issues: DS.hasMany('issue', { async:true })
 });

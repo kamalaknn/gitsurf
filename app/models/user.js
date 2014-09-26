@@ -9,5 +9,5 @@ export default DS.Model.extend({
   avatarUrl: DS.attr('string'),
   
   //relationships
-  repos: DS.hasMany('repo',{async: true, inverse: null})
+  repos: DS.hasMany('repo',{ async: true, inverse: null })
 });

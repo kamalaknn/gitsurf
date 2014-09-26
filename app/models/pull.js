@@ -5,7 +5,7 @@ export default DS.Model.extend({
   state: DS.attr('string'),
   title: DS.attr('string'),
   body: DS.attr('string'),
-  user: DS.belongsTo('user'),
+  user: DS.belongsTo('user',{ async: true, inverse: null }),
   
   //relationships
   repo: DS.belongsTo('repo')

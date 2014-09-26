@@ -7,6 +7,6 @@ export default DS.Model.extend({
   commit: DS.attr(),
   
   //relationships
-  author: DS.belongsTo('user',{async:true, inverse:null}),
+  author: DS.belongsTo('user',{ async:true, inverse:null }),
   repo: DS.belongsTo('repo'),
 });
