@@ -1,10 +1,10 @@
 <div>
-  {{#each}}
+  {{#each model as |issue|}}
     <div style="border: 1px solid #ddd;border-radius: 10px;margin: 10px">
       <div class="pull-left" style="padding:20px">
-        {{avatar-img width="50px" height="50px" src=user.avatarUrl }}
+        {{avatar-img width="50" height="50" src=issue.user.avatarUrl }}
       </div>
-      <div style="padding:20px">{{#link-to 'repo.issues.details' this}}[#{{number}}] {{format-markdown title}} {{/link-to}}</div>
+      <div style="padding:20px">{{#link-to 'repo.issues.details' issue}}[#{{issue.number}}] {{format-markdown issue.title}} {{/link-to}}</div>
     </div>
   {{/each}}
   <div style="border: 1px solid #ededed;border-radius: 10px;margin: 10px">

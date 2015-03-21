@@ -1,35 +1,29 @@
 <div class="container">
-
-
-      <!-- Static navbar -->
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">{{#new-comp}}Fun Project{{/new-comp}}</a>
-          </div>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              {{#each}}
-              {{#link-to 'repo' this tagName="li" }}
-                {{#link-to 'repo' this}}
-                  {{name}}
+    <!-- Static navbar -->
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            {{#each model as |repo|}}
+              {{#link-to 'repo' repo tagName="li" }}
+                {{#link-to 'repo' repo}}
+                  {{repo.name}}
                 {{/link-to}}
               {{/link-to}}
-              {{/each}}
-            </ul>
-           
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </div>
+            {{/each}}
+          </ul>
 
-      <!-- Main component for a primary marketing message or call to action -->
-
-        {{outlet}}
-
+        </div><!--/.nav-collapse -->
+      </div><!--/.container-fluid -->
+    </div>
+    <!-- Main component for a primary marketing message or call to action -->
+    {{outlet}}
 </div>

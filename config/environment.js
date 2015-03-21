@@ -20,17 +20,17 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.APP.LOG_RESOLVER = true;
-    ENV.APP.LOG_ACTIVE_GENERATION = true;
-    ENV.APP.LOG_TRANSITIONS = true;
-    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    ENV.APP.LOG_VIEW_LOOKUPS = true;
+    // ENV.APP.LOG_RESOLVER = true;
+    // ENV.APP.LOG_ACTIVE_GENERATION = true;
+    // ENV.APP.LOG_TRANSITIONS = true;
+    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {
     // Testem prefers this...
     ENV.baseURL = '/';
-    ENV.locationType = 'auto';
+    ENV.locationType = 'none';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
@@ -41,6 +41,15 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
+  }
+  
+   ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self'",
+    'style-src': "'self' 'unsafe-inline'",
+    'connect-src': "'self'  https://api.github.com",
+    'img-src': "'self' data: https://avatars2.githubusercontent.com https://avatars.githubusercontent.com",
+    'media-src': "'self'",
   }
 
   return ENV;

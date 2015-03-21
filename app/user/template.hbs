@@ -1,11 +1,10 @@
 <div class="jumbotron">
-  <div> {{login}} ( {{name}} )</div>
+  <div> {{model.login}} ( {{model.name}} )</div>
   <div>
     {{avatar-img src=avatarUrl width="150px" height="150px"}}
 
   </div>
-  <div> followers - {{followers}}</div>
-  <a {{bind-attr href="htmlUrl" }} >Go to gitHub page </a>
+  <div> followers - {{model.followers}}</div>
+  <a href="{{model.htmlUrl}}" >Go to gitHub page </a>
 
-</div>
 </div>

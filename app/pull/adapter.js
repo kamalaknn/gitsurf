@@ -1,7 +1,7 @@
 import ApplicationAdapter from '../application/adapter';
 
 export default ApplicationAdapter.extend({
-  buildURL: function(type, id) {
+  buildURL(type, id) {
     var host = this.get('host');
     var prefix = this.urlPrefix();
     var url = [];

@@ -12,7 +12,7 @@ export default ApplicationSerializer.extend({
 //  },
 
   /* generate id for a commit as 'user/repo/sha' */
-  _makeId: function(url) {
+  _makeId(url) {
     var urlSlices = url.split('/');
     var sliceLength = urlSlices.length;
     var idFragments = [];
@@ -24,7 +24,7 @@ export default ApplicationSerializer.extend({
     return idFragments.join('/');
   },
   
-  normalize: function(type, hash, prop) {  
+  normalize(type, hash, prop) {  
     if(hash.author){
       hash.author.id = hash.author.login;
   
@@ -39,7 +39,7 @@ export default ApplicationSerializer.extend({
     
     return this._super(type, hash, prop);
   },
-  extractArray: function(store, type, payload) {
+  extractArray(store, type, payload) {
     var self = this;
     payload.forEach(function(record) {
       record.id = self._makeId(record.url);
@@ -47,7 +47,7 @@ export default ApplicationSerializer.extend({
     });
     return this._super(store, type, payload);
   },
-  extractSingle: function(store, type, payload) {
+  extractSingle(store, type, payload) {
     payload.id = this._makeId(payload.url);
     payload.repo = this.currentRepo.get('id');
     return this._super(store, type, payload);
