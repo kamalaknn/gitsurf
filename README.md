@@ -1,4 +1,4 @@
-# Gitpods [![Build Status](https://travis-ci.org/kamalaknn/gitsurf.svg)](https://travis-ci.org/kamalaknn/gitsurf)
+# Gitpods [![Build Status](https://travis-ci.org/kamalaknn/gitsurf.svg)](https://travis-ci.org/kamalaknn/gitsurf) [![Code Climate](https://codeclimate.com/github/kamalaknn/gitsurf/badges/gpa.svg)](https://codeclimate.com/github/kamalaknn/gitsurf)
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
